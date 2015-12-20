@@ -50,19 +50,19 @@ nav:
     url: /index.html
     icon: icon-home
     class: home
-  - text: 文章归档
-    url: /archives.html
+  - text: Read
+    url: http://read.awthink.net
     icon: icon-reorder
     class: none
-  - text: 阅读书单
-    url: /book.html
+  - text: Write
+    url: http://write.awthink.net
     icon: icon-book
     class: none
-  - text: Demo
-    url: http://awthink.org/
+  - text: Think
+    url: http://think.awthink.net
     icon: icon-beaker
     class: none
-  - text: 关于我
+  - text: About
     url: /about.html
     icon: icon-info-sign
     class: none
@@ -73,16 +73,6 @@ page:
     last: true
   - text: 友情链接
     url: /links.html
-    last: false
-
-book:
-  - text: 2015年阅读书单
-    url: /book/book-list-2015.html
-    last: false
-
-goodbooks:
-  - text: 育儿心书
-    url: /book/parenting.html
     last: false
 
 author:
