@@ -1,0 +1,70 @@
+---
+layout: base
+---
+<div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">{{ page.title }}</h2>
+  </div>
+  <div class="col-md-13 aside3-content">
+    <br />
+    <div id="content">
+      {{ content }}
+    </div>
+    <br />
+    <div class="row">
+      {% for book in page.books %}
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">{{ book.title }}</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-4 col-xs-12 center">
+                  <img src="{{ book.cover }}" alt="cover" class="img-thumbnail">
+                </div>
+                <div class="col-md-8 col-xs-12">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr><td style="width:80px;">作者</td><td>{{ book.author }}</td></tr>
+                      <tr><td>出版社</td><td>{{ book.publisher }}</td></tr>
+                      <tr><td>语言</td><td>{{ book.language }}</td></tr>
+                      <tr>
+                        <td>链接</td><td>
+                        <a href="{{ book.link }}" title="{{ book.title }}">图书链接</a>
+                      </td></tr>
+                      <tr>
+                        <td>状态</td>
+                        <td>
+                          {% if book.status == '已读' %}
+                            <span class="label label-success">{{ book.status }}</span>
+                          {% elsif book.status == '在读' %}
+                            <span class="label label-info">{{ book.status }}</span>
+                          {% elsif book.status == '未读' %}
+                            <span class="label label-default">{{ book.status }}</span>
+                          {% endif %}
+                        </td></tr>
+                      <tr><td>评论</td><td>{{ book.description }}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <hr>
+    <!-- 底部声明 -->
+    <div class="row bottom">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8 text-center">
+        &mdash;&nbsp;&nbsp;&copy; 2015&nbsp;&nbsp;&mdash;<br />
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254548725'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254548725%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+</div>
+
