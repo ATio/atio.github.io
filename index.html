@@ -72,13 +72,6 @@
     <div class="loading">正在加载...</div>
 </article>
 
-    <div class="section" id="blog2-posts-list">
-    <div class="loading"><img src="./images/loading.gif">正在加载...</div>
-    </div>
-    <article class="section" id="blog2-write">
-    <div class="loading"><img src="./images/loading.gif">正在加载...</div>
-    </article>
-
 <section class="lotus-double fn-clear">
     <article class="article article-first">
     <h3>更多文章</h3>
@@ -88,7 +81,7 @@
     </article>
 </section>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
             var content ="<ul class=\"compact recent\">";
@@ -99,7 +92,7 @@
             });
             
             content +="</ul>";
-            $("#blog-read .loading").remove();
+            $("# .loading").remove();
             $("#blog-read").append(content);
         });
 
@@ -129,7 +122,7 @@
             $("#blog-think").append(content);
         });
     }); 
-</script>
+</script> -->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -142,8 +135,8 @@
             });
             
             content +="</ul>";
-            $("#blog2-posts-list .loading").remove();
-            $("#blog2-posts-list").append(content);
+            $("#blog-read .loading").remove();
+            $("#blog-read").append(content);
         });
         $.getJSON("/Write/recent.json",function(data){
             var content ="<ul class=\"compact recent\">";
@@ -154,8 +147,20 @@
             });
             
             content +="</ul>";
-            $("#blog2-write .loading").remove();
-            $("#blog2-write").append(content);
+            $("#blog-write .loading").remove();
+            $("#blog-write").append(content);
+        });
+        $.getJSON("/Think/recent.json",function(data){
+            var content ="<ul class=\"compact recent\">";
+            $.each(data,function(i,item){
+            
+            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
+            
+            });
+            
+            content +="</ul>";
+            $("#blog-think .loading").remove();
+            $("#blog-think").append(content);
         });
     }); 
 </script>
