@@ -10,11 +10,11 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
         <h2>{{ site.subTitle }}</h2>
     </hgroup><!-- //violet-site -->
 </section>
-<article class="lotus-article">
-<!-- {% for rpost in paginator.posts limit:5 %}
+<!-- <article class="lotus-article">
+{% for rpost in paginator.posts limit:5 %}
     <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
     <p itemprop="description">{{ rpost.description }}</p>
-{% endfor %} -->
+{% endfor %}
     <div class="section" id="blog-read">
         <div class="loading">正在加载...</div>
     </div>  
@@ -26,7 +26,20 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
     <div class="section" id="blog-think">
         <div class="loading">正在加载...</div>
     </div>  
+</article> -->
+
+<article class="lotus-article" id="blog-read">
+    <div class="loading">正在加载...</div>
 </article>
+
+<article class="lotus-article" id="blog-write">
+    <div class="loading">正在加载...</div>
+</article>
+
+<article class="lotus-article" id="blog-think">
+    <div class="loading">正在加载...</div>
+</article>
+
 <section class="lotus-double fn-clear">
     <article class="article article-first">
     <h3>更多文章</h3>
@@ -49,13 +62,6 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
     </ul>
     </article>
 </section>
-
-<article class="lotus-article">
-
-    <h3><a href="/%E8%87%B4%E7%9F%A5%E5%BD%95/GitHub-Project-Pages-and-User-Organization-Pages.html" title="两种 GitHub Pages 模式搭建博客" rel="bookmark">两种 GitHub Pages 模式搭建博客</a></h3>
-    <p itemprop="description">你也许听说过可以利用 GitHub Pages 搭建博客，你也许查阅过许多的文章教程，你甚至已经开始动手并成功的搭建起了自己的博客。但是，你知道这个世界上原来还有两种不同的 GitHub Pages 模式吗？</p>
-
-</article>
 
 <script type="text/javascript">
         $(document).ready(function() {
