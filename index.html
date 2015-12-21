@@ -79,20 +79,20 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
-            var content;
+            var content = "<h3>";
             $.each(data,function(i,item){
             
-            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
+            content += "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
             });
             content +="</p>";
             $("#blog-read .loading").remove();
             $("#blog-read").append(content);
         });
         $.getJSON("/Write/recent.json",function(data){
-            var content;
+            var content = "<h3>";
             $.each(data,function(i,item){
             
-            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
+            content += "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
             });
             content +="</p>";
             $("#blog-write .loading").remove();
