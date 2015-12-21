@@ -21,23 +21,10 @@
         {% endfor %} -->
     </article>
 
-4. 改为：
-    
-    <article class="lotus-article">
-        <div class="section" id="blog-read">
-            <div class="loading">正在加载...</div>
-        </div>  
-
-        <div class="section" id="blog-write">
-            <div class="loading">正在加载...</div>
-        </div>  
-
-        <div class="section" id="blog-think">
-            <div class="loading">正在加载...</div>
-        </div>  
-    </article>
-    
+4. 稍作修改并测试。修改结果未定，需要进行多次测试。
 5. 末尾增加读取 json 的js
+
+如果多个`<article>`能调出来，那么用 js 添加内容到元素末尾，应该可以合并成一个调出来。然后看看有没有排序功能，调出来的内容按时间做个排序，就可以实现预想的功能了。
 
 ## 2015年12月20日 18:59:34  组织和多子站策略
 
