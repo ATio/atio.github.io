@@ -120,7 +120,7 @@
             
             content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
             });
-            
+            return content;
             $("#blog-read .loading").remove();
             $("#blog-read").append(content);
         });
