@@ -53,23 +53,18 @@
         </hgroup><!-- //violet-site -->
     </section>
 
-<!-- <article class="lotus-article">
-{% for rpost in paginator.posts limit:5 %}
-    <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
-    <p itemprop="description">{{ rpost.description }}</p>
-{% endfor %}  
-</article> -->
+<article class="lotus-article">
 
-<article class="lotus-article" id="blog-read">
-    <div class="loading">正在加载...</div>
-</article>
+    <div id="blog-read">
+    </div>
 
-<div class="lotus-article" id="blog-write">
-    <div class="loading">正在加载...</div>
-</div>
+    <div id="blog-write">
+        <div class="loading">正在加载...</div>
+    </div>
 
-<article class="lotus-article" id="blog-think">
-    <div class="loading">正在加载...</div>
+    <div id="blog-think">
+    </div>
+
 </article>
 
 <!-- <section class="lotus-double fn-clear">
@@ -81,44 +76,13 @@
     </article>
 </section> -->
 
-<!-- <script type="text/javascript">
-    $(document).ready(function() {
-        
-        $.getJSON("/Write/recent.json",function(data){
-            var content ="";
-            $.each(data,function(i,item){
-            
-            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
-            
-            });
-            
-            content +="<p itemprop=\"description\">"+ item.description +"</p>";
-            $("#blog-write .loading").remove();
-            $("#blog-write").append(content);
-        });
-
-        $.getJSON("/Think/recent.json",function(data){
-            var content;
-            $.each(data,function(i,item){
-            
-            content += "<h3><a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
-            
-            });
-            
-            content +="<p itemprop=\"description\">"+ item.description +"</p>";
-            $("#blog-think .loading").remove();
-            $("#blog-think").append(content);
-        });
-    }); 
-</script> -->
-
 <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
             var content;
             $.each(data,function(i,item){
             
-            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
+            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description + "</p>";
             });
             
             $("#blog-read .loading").remove();
@@ -135,11 +99,10 @@
             $("#blog-write").append(content);
         });
         $.getJSON("/Think/recent.json",function(data){
-            var content ="<ul class=\"compact recent\">";
+            var content;
             $.each(data,function(i,item){
             
-            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-            
+            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description + "</p>";
             });
             
             content +="</ul>";
