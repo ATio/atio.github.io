@@ -64,9 +64,9 @@
     <div class="loading">正在加载...</div>
 </article>
 
-<article class="lotus-article" id="blog-write">
+<div class="lotus-article" id="blog-write">
     <div class="loading">正在加载...</div>
-</article>
+</div>
 
 <article class="lotus-article" id="blog-think">
     <div class="loading">正在加载...</div>
@@ -75,6 +75,9 @@
     <div class="section" id="blog2-posts-list">
     <div class="loading"><img src="./images/loading.gif">正在加载...</div>
     </div>
+    <article class="section" id="blog2-posts-list">
+    <div class="loading"><img src="./images/loading.gif">正在加载...</div>
+    </article>
 
 <section class="lotus-double fn-clear">
     <article class="article article-first">
@@ -143,18 +146,18 @@
 </script>
 
 <script type="text/javascript">
-        $(document).ready(function() {
-            $.getJSON("/Read/recent.json",function(data){
-                var content ="<ul class=\"compact recent\">";
-                $.each(data,function(i,item){
-                
-                content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-                
-                });
-                
-                content +="</ul>";
-                $("#blog2-posts-list .loading").remove();
-                $("#blog2-posts-list").append(content);
+    $(document).ready(function() {
+        $.getJSON("/Read/recent.json",function(data){
+            var content ="<ul class=\"compact recent\">";
+            $.each(data,function(i,item){
+            
+            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
+            
             });
-        }); 
-    </script>
+            
+            content +="</ul>";
+            $("#blog2-posts-list .loading").remove();
+            $("#blog2-posts-list").append(content);
+        });
+    }); 
+</script>
