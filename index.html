@@ -79,9 +79,9 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
-            var content = "<h3>";
+            var content = "";
             $.each(data,function(i,item){
-                content += "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
+                content += "<h3><a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
             });
             content +="</p>";
             $("#blog-read .loading").remove();
@@ -97,11 +97,11 @@
             $("#blog-write").append(content);
         });
         $.getJSON("/Think/recent.json",function(data){
-            var content = "<h3>";
+            var content = "&nbsp;";
             $.each(data,function(i,item){
-                content += "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description;
+                content += "<h3><a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description + "</p>";
             });
-            content +="</p>";
+            content +="&nbsp;";
             $("#blog-think .loading").remove();
             $("#blog-think").append(content);
         });
