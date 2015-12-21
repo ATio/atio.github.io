@@ -6,25 +6,16 @@
 
 ### 子站
 1. 给各子站根目录添加`recent.json`
-2. recent.json 中增加摘要description，不知道能不能成功。
+2. recent.json 中增加摘要description，成功。
 
 ### 主站
 
-1. 改根目录下的 index.html 
-2. 已有 jquery ，不需要重复引入
-3. 注释原来的：
+1. 根目录下的 index.html 改成了全静态，不能再调用jekyll标签了。
+2. 具体看页面代码吧，全新的页面了。
 
-    <article class="lotus-article">
-        <!-- {% for rpost in paginator.posts limit:5 %}
-            <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
-            <p itemprop="description">{{ rpost.description }}</p>
-        {% endfor %} -->
-    </article>
+### 坑
 
-4. 稍作修改并测试。修改结果未定，需要进行多次测试。
-5. 末尾增加读取 json 的js
-
-如果多个`<article>`能调出来，那么用 js 添加内容到元素末尾，应该可以合并成一个调出来。然后看看有没有排序功能，调出来的内容按时间做个排序，就可以实现预想的功能了。
+`recent.json`的子站目录**区分大小写**！！！就因为这个，搞了一上午都没正确读取出来。
 
 ## 2015年12月20日 18:59:34  组织和多子站策略
 
