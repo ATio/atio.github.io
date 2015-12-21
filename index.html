@@ -120,7 +120,7 @@
             
             content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
             });
-            return content;
+            
             $("#blog-read .loading").remove();
             $("#blog-read").append(content);
         });
@@ -128,10 +128,9 @@
             var content;
             $.each(data,function(i,item){
             
-            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
+            content = "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>" + "<p itemprop=\"description\">" + item.description + "</p>";
             });
             
-            content +="<p itemprop=\"description\">" + item.description + "</p>";
             $("#blog-write .loading").remove();
             $("#blog-write").append(content);
         });
