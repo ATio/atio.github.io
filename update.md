@@ -1,5 +1,44 @@
 # 博客修改记录
 
+## 2015年12月21日 10:00 主站调用子站
+
+参考资料：[用jekyll生成json](http://yanping.me/cn/blog/2012/04/19/jekyll-with-json/)
+
+### 子站
+1. 给各子站根目录添加`recent.json`
+2. recent.json 中增加摘要description，不知道能不能成功。
+
+### 主站
+
+1. 改根目录下的 index.html 
+2. 已有 jquery ，不需要重复引入
+3. 注释原来的：
+
+    <article class="lotus-article">
+        <!-- {% for rpost in paginator.posts limit:5 %}
+            <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
+            <p itemprop="description">{{ rpost.description }}</p>
+        {% endfor %} -->
+    </article>
+
+4. 改为：
+    
+    <article class="lotus-article">
+        <div class="section" id="blog-read">
+            <div class="loading">正在加载...</div>
+        </div>  
+
+        <div class="section" id="blog-write">
+            <div class="loading">正在加载...</div>
+        </div>  
+
+        <div class="section" id="blog-think">
+            <div class="loading">正在加载...</div>
+        </div>  
+    </article>
+    
+5. 末尾增加读取 json 的js
+
 ## 2015年12月20日 18:59:34  组织和多子站策略
 
 ### 一、组织、主站和子站
