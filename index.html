@@ -75,7 +75,7 @@
     <div class="section" id="blog2-posts-list">
     <div class="loading"><img src="./images/loading.gif">正在加载...</div>
     </div>
-    <article class="section" id="blog2-posts-list">
+    <article class="section" id="blog2-write">
     <div class="loading"><img src="./images/loading.gif">正在加载...</div>
     </article>
 
@@ -158,6 +158,18 @@
             content +="</ul>";
             $("#blog2-posts-list .loading").remove();
             $("#blog2-posts-list").append(content);
+        });
+        $.getJSON("/Read/recent.json",function(data){
+            var content ="<ul class=\"compact recent\">";
+            $.each(data,function(i,item){
+            
+            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
+            
+            });
+            
+            content +="</ul>";
+            $("#blog2-write .loading").remove();
+            $("#blog2-write").append(content);
         });
     }); 
 </script>
