@@ -72,32 +72,20 @@
     <div class="loading">正在加载...</div>
 </article>
 
-<section class="lotus-double fn-clear">
+<!-- <section class="lotus-double fn-clear">
     <article class="article article-first">
     <h3>更多文章</h3>
         <ul>
             <li><a href="http://awthink.net/archives.html">文章归档</a></li>
         </ul>
     </article>
-</section>
+</section> -->
 
 <!-- <script type="text/javascript">
     $(document).ready(function() {
-        $.getJSON("/Read/recent.json",function(data){
-            var content ="<ul class=\"compact recent\">";
-            $.each(data,function(i,item){
-            
-            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-            
-            });
-            
-            content +="</ul>";
-            $("# .loading").remove();
-            $("#blog-read").append(content);
-        });
-
+        
         $.getJSON("/Write/recent.json",function(data){
-            var content ="<h3>";
+            var content ="";
             $.each(data,function(i,item){
             
             content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
@@ -127,26 +115,23 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
-            var content ="<ul class=\"compact recent\">";
+            var content;
             $.each(data,function(i,item){
             
-            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-            
+            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
             });
             
-            content +="</ul>";
             $("#blog-read .loading").remove();
             $("#blog-read").append(content);
         });
         $.getJSON("/Write/recent.json",function(data){
-            var content ="<ul class=\"compact recent\">";
+            var content;
             $.each(data,function(i,item){
             
-            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-            
+            content += "<h3>" + "<a href=\""+item.url+"\">"+ item.title +"</a></h3>";
             });
             
-            content +="</ul>";
+            content +="<p itemprop=\"description\">" + item.description + "</p>";
             $("#blog-write .loading").remove();
             $("#blog-write").append(content);
         });
