@@ -86,20 +86,6 @@
             <li><a href="http://awthink.net/archives.html">文章归档</a></li>
         </ul>
     </article>
-    <article class="article article-last">
-    <h3>相关页面</h3>
-    <ul>
-        <li>
-            {% for page in site.page %}
-            <a href="{{ page.url }}" rel="bookmark" title="{{page.text}}">{{ page.text }}</a>
-            {% if !page.last %}
-        </li>
-        <li>
-            {% endif %}
-            {% endfor %}
-        </li>
-    </ul>
-    </article>
 </section>
 
 <script type="text/javascript">
@@ -159,7 +145,7 @@
             $("#blog2-posts-list .loading").remove();
             $("#blog2-posts-list").append(content);
         });
-        $.getJSON("/Read/recent.json",function(data){
+        $.getJSON("/Write/recent.json",function(data){
             var content ="<ul class=\"compact recent\">";
             $.each(data,function(i,item){
             
