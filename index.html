@@ -52,23 +52,12 @@
             <h2>Talk is cheap,Show me the code</h2>
         </hgroup><!-- //violet-site -->
     </section>
-    
+
 <!-- <article class="lotus-article">
 {% for rpost in paginator.posts limit:5 %}
     <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
     <p itemprop="description">{{ rpost.description }}</p>
-{% endfor %}
-    <div class="section" id="blog-read">
-        <div class="loading">正在加载...</div>
-    </div>  
-
-    <div class="section" id="blog-write">
-        <div class="loading">正在加载...</div>
-    </div>  
-
-    <div class="section" id="blog-think">
-        <div class="loading">正在加载...</div>
-    </div>  
+{% endfor %}  
 </article> -->
 
 <article class="lotus-article" id="blog-read">
@@ -109,14 +98,14 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.getJSON("/Read/recent.json",function(data){
-            var content ="<h3>";
+            var content ="<ul class=\"compact recent\">";
             $.each(data,function(i,item){
             
-            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
+            content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
             
             });
             
-            content +="<p itemprop=\"description\">"+ item.description +"</p>";
+            content +="</ul>";
             $("#blog-read .loading").remove();
             $("#blog-read").append(content);
         });
@@ -135,10 +124,10 @@
         });
 
         $.getJSON("/Think/recent.json",function(data){
-            var content ="<h3>";
+            var content;
             $.each(data,function(i,item){
             
-            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
+            content += "<h3><a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
             
             });
             
