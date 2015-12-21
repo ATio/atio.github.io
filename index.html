@@ -65,7 +65,7 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
 
 <script type="text/javascript">
         $(document).ready(function() {
-            $.getJSON("/read/recent.json",function(data){
+            $.getJSON("/Read/recent.json",function(data){
                 var content ="<h3>";
                 $.each(data,function(i,item){
                 
@@ -78,7 +78,7 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
                 $("#blog-read").append(content);
             });
 
-            $.getJSON("/write/recent.json",function(data){
+            $.getJSON("/Write/recent.json",function(data){
                 var content ="<h3>";
                 $.each(data,function(i,item){
                 
@@ -91,7 +91,7 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
                 $("#blog-write").append(content);
             });
 
-            $.getJSON("/think/recent.json",function(data){
+            $.getJSON("/Think/recent.json",function(data){
                 var content ="<h3>";
                 $.each(data,function(i,item){
                 
