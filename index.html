@@ -1,15 +1,58 @@
----
-layout: default
-title:
-description: 这是 AwThink 的技术博客，基于 Jekyll 与 GitHub Pages 搭建。AwThink 将在此记录工作、学习和成长中的一点一滴，并且，这也是 AwThink 对 Git 的学习和使用的一次有意义的实践。
-keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, wordpress, design, geek
----
-<section class="lotus-logo fn-clear">
-    <hgroup class="violet-site">
-        <h1><a href="{{ site.url }}" >{{ site.title }}</a></h1>
-        <h2>{{ site.subTitle }}</h2>
-    </hgroup><!-- //violet-site -->
-</section>
+<!DOCTYPE html>
+<html id="J-html" class="">
+<head>
+    <meta charset="UTF-8" />
+    <title>AwThink</title>
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="AwThink" />
+    <meta name="description" content="这是 AwThink 的技术博客，基于 Jekyll 与 GitHub Pages 搭建。AwThink 将在此记录工作、学习和成长中的一点一滴，并且，这也是 AwThink 对 Git 的学习和使用的一次有意义的实践。" />
+    <meta name="keywords" content="AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, wordpress, design, geek" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="http://awthink.net/static/style.css" />
+    <!--[if lt IE 9]>
+    <script src="http://awthink.net/static/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="http://awthink.net/static/js/jquery.js" type="text/javascript"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="home blog lotus index">
+
+    <nav class="lotus-nav">
+        <ul>
+            <li class="home current">
+                <a href="/index.html" rel="bookmark" title="首页">
+                    <i class="icon-home"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="http://read.awthink.net" rel="bookmark" title="Read">
+                    <i class="icon-reorder"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="http://write.awthink.net" rel="bookmark" title="Write">
+                    <i class="icon-book"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="http://think.awthink.net" rel="bookmark" title="Think">
+                    <i class="icon-beaker"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="/about.html" rel="bookmark" title="About">
+                    <i class="icon-info-sign"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="lotus-logo fn-clear">
+        <hgroup class="violet-site">
+            <h1><a href="http://awthink.net" >AwThink</a></h1>
+            <h2>Talk is cheap,Show me the code</h2>
+        </hgroup><!-- //violet-site -->
+    </section>
+    
 <!-- <article class="lotus-article">
 {% for rpost in paginator.posts limit:5 %}
     <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
@@ -64,44 +107,44 @@ keywords: AwThink, GitHub, Jekyll, CSS, html, html5, CSS3, JavaScript, js, ES6, 
 </section>
 
 <script type="text/javascript">
-        $(document).ready(function() {
-            $.getJSON("/Read/recent.json",function(data){
-                var content ="<h3>";
-                $.each(data,function(i,item){
-                
-                content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
-                
-                });
-                
-                content +="<p itemprop=\"description\">"+ item.description +"</p>";
-                $("#blog-read .loading").remove();
-                $("#blog-read").append(content);
+    $(document).ready(function() {
+        $.getJSON("/Read/recent.json",function(data){
+            var content ="<h3>";
+            $.each(data,function(i,item){
+            
+            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
+            
             });
+            
+            content +="<p itemprop=\"description\">"+ item.description +"</p>";
+            $("#blog-read .loading").remove();
+            $("#blog-read").append(content);
+        });
 
-            $.getJSON("/Write/recent.json",function(data){
-                var content ="<h3>";
-                $.each(data,function(i,item){
-                
-                content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
-                
-                });
-                
-                content +="<p itemprop=\"description\">"+ item.description +"</p>";
-                $("#blog-write .loading").remove();
-                $("#blog-write").append(content);
+        $.getJSON("/Write/recent.json",function(data){
+            var content ="<h3>";
+            $.each(data,function(i,item){
+            
+            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
+            
             });
+            
+            content +="<p itemprop=\"description\">"+ item.description +"</p>";
+            $("#blog-write .loading").remove();
+            $("#blog-write").append(content);
+        });
 
-            $.getJSON("/Think/recent.json",function(data){
-                var content ="<h3>";
-                $.each(data,function(i,item){
-                
-                content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
-                
-                });
-                
-                content +="<p itemprop=\"description\">"+ item.description +"</p>";
-                $("#blog-think .loading").remove();
-                $("#blog-think").append(content);
+        $.getJSON("/Think/recent.json",function(data){
+            var content ="<h3>";
+            $.each(data,function(i,item){
+            
+            content += "<a href=\""+item.url+"\" title=\""item.title"\" rel=\"bookmark\">"+ item.title +"</a></h3>";
+            
             });
-        }); 
-    </script>
+            
+            content +="<p itemprop=\"description\">"+ item.description +"</p>";
+            $("#blog-think .loading").remove();
+            $("#blog-think").append(content);
+        });
+    }); 
+</script>
