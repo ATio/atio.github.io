@@ -24,4 +24,4 @@ _site
 sea-modules
 .cache
 iLotus-jekyll/_site
-/draft
+_draft
