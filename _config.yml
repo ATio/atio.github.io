@@ -39,8 +39,7 @@ timezone:      null
 
 #站点基础配置
 title: AwThink
-subTitle: This 辣鸡网站 is Chrome Only. 
-You want to see it? Try Chrome, or you can not see anything
+subTitle: This 辣鸡网站 is Chrome Only. You want to see it? Try Chrome, or you can not see anything
 description: 这是 AwThink 的技术博客，它是基于 GitHub Pages 搭建起来的。在这里，AwThink 将记录工作、学习和成长中的一点一滴，并且，这也是 AwThink 对 Git 的学习和使用的一次有意义的实践。
 url: http://awthink.net
 feed: /atom.xml
